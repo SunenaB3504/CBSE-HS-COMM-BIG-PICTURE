@@ -1,0 +1,15 @@
+{
+  "title": "Short story",
+  "metadata": {
+    "source": "Story-small.txt",
+    "type": "story",
+    "length": "short"
+  },
+  "speaker": "Narrator",
+  "paragraphs": [
+    "Once upon a time, in a small village, there lived a wise old man.",
+    "He was known for his stories that taught valuable lessons to everyone who listened.",
+    "One day, a young boy approached him, eager to learn about life.",
+    "The old man smiled and began his tale, sharing wisdom that would guide the boy for years to come."
+  ]
+}

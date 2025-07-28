@@ -61,15 +61,34 @@ function renderMindmap() {
 
 function showModal(node) {
   const modal = document.getElementById('modal');
-  modal.innerHTML = `<h2>${node.label}</h2>` +
-    (node.duration ? `<p><em>${node.duration}</em></p>` : '') +
-    `<div class="audio-controls">
-      <button onclick="window.playAudio && window.playAudio('${node.label}')">Play</button>
-      <button onclick="window.pauseAudio && window.pauseAudio()">Pause</button>
-      <button onclick="window.stopAudio && window.stopAudio()">Stop</button>
-    </div>
-    <button onclick="hideModal()">Close</button>`;
-  modal.classList.add('visible');
+  // If node is 'Short story', fetch and show JSON content
+  if (node.label === 'Short story') {
+    fetch('data/story-small.json')
+      .then(res => res.json())
+      .then(data => {
+        modal.innerHTML = `<h2>${data.title}</h2>` +
+          `<p><em>Speaker: ${data.speaker}</em></p>` +
+          `<p><em>Source: ${data.metadata.source}</em></p>` +
+          data.paragraphs.map(p => `<p>${p}</p>`).join('') +
+          `<div class="audio-controls">
+            <button onclick="window.playAudio && window.playAudio('${data.paragraphs.join(' ')}')">Play</button>
+            <button onclick="window.pauseAudio && window.pauseAudio()">Pause</button>
+            <button onclick="window.stopAudio && window.stopAudio()">Stop</button>
+          </div>
+          <button onclick="hideModal()">Close</button>`;
+        modal.classList.add('visible');
+      });
+  } else {
+    modal.innerHTML = `<h2>${node.label}</h2>` +
+      (node.duration ? `<p><em>${node.duration}</em></p>` : '') +
+      `<div class="audio-controls">
+        <button onclick="window.playAudio && window.playAudio('${node.label}')">Play</button>
+        <button onclick="window.pauseAudio && window.pauseAudio()">Pause</button>
+        <button onclick="window.stopAudio && window.stopAudio()">Stop</button>
+      </div>
+      <button onclick="hideModal()">Close</button>`;
+    modal.classList.add('visible');
+  }
 }
 
 function hideModal() {
