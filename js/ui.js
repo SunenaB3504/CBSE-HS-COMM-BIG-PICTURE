@@ -66,27 +66,53 @@ function showModal(node) {
     fetch('data/story-small.json')
       .then(res => res.json())
       .then(data => {
-        modal.innerHTML = `<h2>${data.title}</h2>` +
-          `<p><em>Speaker: ${data.speaker}</em></p>` +
-          `<p><em>Source: ${data.metadata.source}</em></p>` +
-          data.paragraphs.map(p => `<p>${p}</p>`).join('') +
-          `<div class="audio-controls">
-            <button onclick="window.playAudio && window.playAudio('${data.paragraphs.join(' ')}')">Play</button>
-            <button onclick="window.pauseAudio && window.pauseAudio()">Pause</button>
-            <button onclick="window.stopAudio && window.stopAudio()">Stop</button>
-          </div>
-          <button onclick="hideModal()">Close</button>`;
-        modal.classList.add('visible');
+                    modal.innerHTML = `<h2>${data.title}</h2>` +
+                      `<div class='audio-controls'>
+                        <button id='playBtn'>Play</button>
+                        <button id='pauseBtn'>Pause</button>
+                        <button id='stopBtn'>Stop</button>
+                      </div>` +
+                      `<div id='storyText'>` +
+                        data.paragraphs.map((p) => `<p>${p}</p>`).join('') +
+                      `</div>` +
+                      `<button id='closeBtn'>Close</button>`;
+                    modal.classList.add('visible');
+                    const storyText = data.paragraphs.join(' ');
+                    document.getElementById('playBtn').addEventListener('click', function() {
+                      window.playAudio(storyText);
+                    });
+                    document.getElementById('pauseBtn').addEventListener('click', function() {
+                      window.pauseAudio();
+                    });
+                    document.getElementById('stopBtn').addEventListener('click', function() {
+                      window.stopAudio();
+                    });
+                    document.getElementById('closeBtn').addEventListener('click', function() {
+                      window.stopAudio();
+                      hideModal();
+                    });
       });
   } else {
     modal.innerHTML = `<h2>${node.label}</h2>` +
       (node.duration ? `<p><em>${node.duration}</em></p>` : '') +
       `<div class="audio-controls">
-        <button onclick="window.playAudio && window.playAudio('${node.label}')">Play</button>
-        <button onclick="window.pauseAudio && window.pauseAudio()">Pause</button>
-        <button onclick="window.stopAudio && window.stopAudio()">Stop</button>
-      </div>
-      <button onclick="hideModal()">Close</button>`;
+                    <button id='playBtn'>Play</button>
+                    <button id='pauseBtn'>Pause</button>
+                    <button id='stopBtn'>Stop</button>
+                  </div>
+                  <button id='closeBtn'>Close</button>`;
+             document.getElementById('playBtn').addEventListener('click', function() {
+                 window.playAudio && window.playAudio('${node.label}');
+             });
+             document.getElementById('pauseBtn').addEventListener('click', function() {
+                 window.pauseAudio && window.pauseAudio();
+             });
+             document.getElementById('stopBtn').addEventListener('click', function() {
+                 window.stopAudio && window.stopAudio();
+             });
+             document.getElementById('closeBtn').addEventListener('click', function() {
+                 hideModal();
+             });
     modal.classList.add('visible');
   }
 }

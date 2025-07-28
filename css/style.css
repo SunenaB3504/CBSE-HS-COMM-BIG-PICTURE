@@ -34,6 +34,8 @@ body {
     box-shadow: 0 4px 24px rgba(0,0,0,0.4);
     padding: 32px;
     min-width: 350px;
+    max-height: 70vh;
+    overflow-y: auto;
     z-index: 1000;
     display: none;
 }
