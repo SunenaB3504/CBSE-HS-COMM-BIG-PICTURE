@@ -71,7 +71,8 @@ function showModal(node) {
           'Cashflow Statement': 'data/cashflow-statement.json',
           'Principles and functions of Management': 'data/principles-functions-management.json',
           'Business Finance and Marketing': 'data/business-finance-marketing.json',
-          'Macro Economics': 'data/macroeconomics.json'
+          'Macro Economics': 'data/macroeconomics.json',
+          'Indian Economy': 'data/indian-economy.json'
         };
         const jsonFile = jsonMap[node.label];
         if (jsonFile) {
