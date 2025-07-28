@@ -61,11 +61,12 @@ function renderMindmap() {
 
 function showModal(node) {
   const modal = document.getElementById('modal');
-  // If node is 'Short story', fetch and show JSON content
-  if (node.label === 'Short story') {
-    fetch('data/story-small.json')
-      .then(res => res.json())
-      .then(data => {
+        // If node is 'Short story' or 'Long Story', fetch and show JSON content
+        if (node.label === 'Short story' || node.label === 'Long Story') {
+            const jsonFile = node.label === 'Short story' ? 'data/story-small.json' : 'data/long-story.json';
+            fetch(jsonFile)
+                .then(res => res.json())
+                .then(data => {
                     modal.innerHTML = `<h2>${data.title}</h2>` +
                       `<div class='audio-controls'>
                         <button id='playBtn'>Play</button>
@@ -73,14 +74,48 @@ function showModal(node) {
                         <button id='stopBtn'>Stop</button>
                       </div>` +
                       `<div id='storyText'>` +
-                        data.paragraphs.map((p) => `<p>${p}</p>`).join('') +
+                        data.paragraphs.map((p) =>
+                          typeof p === 'string'
+                            ? `<p>${p}</p>`
+                            : `<p><strong>${p.speaker}:</strong> ${p.text}</p>`
+                        ).join('') +
                       `</div>` +
                       `<button id='closeBtn'>Close</button>`;
                     modal.classList.add('visible');
-                    const storyText = data.paragraphs.join(' ');
-                    document.getElementById('playBtn').addEventListener('click', function() {
-                      window.playAudio(storyText);
-                    });
+
+                    // Play logic for multi-speaker
+                    function playStoryWithSpeakers() {
+                      window.stopAudio();
+                      let synth = window.speechSynthesis;
+                      let voices = synth.getVoices();
+                      let getVoice = (speaker) => {
+                        // Pick different voices or pitch for each speaker
+                        if (speaker === 'Neil') return { voice: voices[0] || null, pitch: 1.2 };
+                        if (speaker === 'Kanishq') return { voice: voices[1] || null, pitch: 0.9 };
+                        return { voice: voices[2] || null, pitch: 1 };
+                      };
+                      let idx = 0;
+                      function speakNext() {
+                        if (idx < data.paragraphs.length) {
+                          let p = data.paragraphs[idx];
+                          let text = typeof p === 'string' ? p : p.text;
+                          let speaker = typeof p === 'string' ? data.speaker : p.speaker;
+                          let utter = new SpeechSynthesisUtterance(text);
+                          let v = getVoice(speaker);
+                          if (v.voice) utter.voice = v.voice;
+                          utter.pitch = v.pitch;
+                          utter.rate = 1;
+                          utter.onend = function() {
+                            idx++;
+                            speakNext();
+                          };
+                          synth.speak(utter);
+                        }
+                      }
+                      speakNext();
+                    }
+
+                    document.getElementById('playBtn').addEventListener('click', playStoryWithSpeakers);
                     document.getElementById('pauseBtn').addEventListener('click', function() {
                       window.pauseAudio();
                     });
@@ -91,7 +126,7 @@ function showModal(node) {
                       window.stopAudio();
                       hideModal();
                     });
-      });
+                });
   } else {
     modal.innerHTML = `<h2>${node.label}</h2>` +
       (node.duration ? `<p><em>${node.duration}</em></p>` : '') +
