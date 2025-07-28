@@ -57,3 +57,30 @@ button {
 button:hover {
     background: #3b4a6b;
 }
+
+/* Horizontal alignment for top-level children */
+.children.level-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 32px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.node.level-1 {
+    min-width: 200px;
+    flex: 1 1 200px;
+}
+
+/* Vertical alignment for subnodes */
+.children.level-2, .children.level-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+}
