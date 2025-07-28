@@ -67,7 +67,9 @@ function showModal(node) {
           'Long Story': 'data/long-story.json',
           'Partnership': 'data/partnership.json',
           'Companies': 'data/companies.json',
-          'Financial Statements': 'data/financial-statements.json'
+          'Financial Statements': 'data/financial-statements.json',
+          'Cashflow Statement': 'data/cashflow-statement.json',
+          'Principles and functions of Management': 'data/principles-functions-management.json'
         };
         const jsonFile = jsonMap[node.label];
         if (jsonFile) {

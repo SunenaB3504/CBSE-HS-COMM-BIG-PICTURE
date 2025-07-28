@@ -1,0 +1,24 @@
+{
+  "title": "Cashflow Statement",
+  "metadata": {
+    "source": "cashflow-statement.txt",
+    "type": "story",
+    "length": "long"
+  },
+  "speaker": "Narrator",
+  "paragraphs": [
+    {"speaker": "Narrator", "text": "It was February 2027, weeks before their Board exams. Neil and Kanishq were in a bustling music shop in Vashi. Kanishq, wrestling with his textbook, was clearly frustrated."},
+    {"speaker": "Kanishq", "text": "Neil, this is insane. We’ve figured out how to raise money, how to dissect a balance sheet... But this Cash Flow Statement? It’s like a phantom limb of accounting! It doesn't care about profit, it just wants to know where the actual cash went. Why is it so critical?"},
+    {"speaker": "Neil", "text": "Ah, the cash flow. Kanishq, imagine this music shop. On paper, it might show a fantastic profit. But what if it isn't generating enough actual cash to pay its suppliers, or even the rent? It could be swimming in profit, but drowning because it lacks liquid funds. Profit is an opinion, but cash is a fact!"},
+    {"speaker": "Neil", "text": "The Cash Flow Statement tells the story of every rupee flowing in and out, categorized by why it flowed."},
+    {"speaker": "Kanishq", "text": "So, it’s not just about sales and expenses on paper?"},
+    {"speaker": "Neil", "text": "Exactly! The Cash Flow Statement has three main sections, like the distinct beats of a song, each telling you something vital about the business’s rhythm."},
+    {"speaker": "System", "text": "The Three Movements of Cash Flow:<br>• Operating Activities: The main melody from core business operations.<br>• Investing Activities: The heavy bassline from long-term asset transactions.<br>• Financing Activities: The harmony from raising and repaying capital.<br>"},
+    {"speaker": "Neil", "text": "Operating Activities is the cash from selling instruments or app subscriptions. It tells you if the core business is self-sustaining."},
+    {"speaker": "Neil", "text": "Investing Activities is cash for buying or selling long-term assets, like new servers for KnowledgeCompass."},
+    {"speaker": "Neil", "text": "Financing Activities is how we raise and repay capital—issuing shares, taking loans, or distributing dividends."},
+    {"speaker": "Kanishq", "text": "So, if we have good cash from operations, it means we’re not running out of liquid fuel, even if our profit isn't huge?"},
+    {"speaker": "Neil", "text": "Precisely! A profitable company can still go bankrupt if it doesn’t manage its cash flow. The Cash Flow Statement provides the raw, unadjusted truth of where every rupee is going. It’s the lifeblood, the very pulse of any business."},
+    {"speaker": "Narrator", "text": "As Neil bought his guitar, Kanishq saw it as a tangible representation of cash flow. The Cash Flow Statement was no longer a phantom; it was the rhythmic heartbeat of a business, dictating its survival and growth."}
+  ]
+}
