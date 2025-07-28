@@ -83,47 +83,78 @@ function showModal(node) {
                       `<button id='closeBtn'>Close</button>`;
                     modal.classList.add('visible');
 
-                    // Play logic for multi-speaker
-                    function playStoryWithSpeakers() {
-                      window.stopAudio();
-                      let synth = window.speechSynthesis;
-                      let voices = synth.getVoices();
-                      let getVoice = (speaker) => {
-                        // Pick different voices or pitch for each speaker
-                        if (speaker === 'Neil') return { voice: voices[0] || null, pitch: 1.2 };
-                        if (speaker === 'Kanishq') return { voice: voices[1] || null, pitch: 0.9 };
-                        return { voice: voices[2] || null, pitch: 1 };
-                      };
-                      let idx = 0;
-                      function speakNext() {
-                        if (idx < data.paragraphs.length) {
-                          let p = data.paragraphs[idx];
-                          let text = typeof p === 'string' ? p : p.text;
-                          let speaker = typeof p === 'string' ? data.speaker : p.speaker;
-                          let utter = new SpeechSynthesisUtterance(text);
-                          let v = getVoice(speaker);
-                          if (v.voice) utter.voice = v.voice;
-                          utter.pitch = v.pitch;
-                          utter.rate = 1;
-                          utter.onend = function() {
+                    // Improved play/pause/resume logic for multi-speaker
+                    let synth = window.speechSynthesis;
+                    let voices = synth.getVoices();
+                    let getVoice = (speaker) => {
+                      if (speaker === 'Neil') return { voice: voices[0] || null, pitch: 1.2 };
+                      if (speaker === 'Kanishq') return { voice: voices[1] || null, pitch: 0.9 };
+                      return { voice: voices[2] || null, pitch: 1 };
+                    };
+                    let idx = 0;
+                    let paused = false;
+                    let utter = null;
+                    let wasPaused = false;
+
+                    function speakNext() {
+                      if (idx < data.paragraphs.length && !paused) {
+                        let p = data.paragraphs[idx];
+                        let text = typeof p === 'string' ? p : p.text;
+                        let speaker = typeof p === 'string' ? data.speaker : p.speaker;
+                        utter = new SpeechSynthesisUtterance(text);
+                        let v = getVoice(speaker);
+                        if (v.voice) utter.voice = v.voice;
+                        utter.pitch = v.pitch;
+                        utter.rate = 1;
+                        utter.onend = function(event) {
+                          if (!paused && event.elapsedTime > 0) {
                             idx++;
+                          }
+                          if (!paused) {
                             speakNext();
-                          };
-                          synth.speak(utter);
-                        }
+                          }
+                        };
+                        synth.speak(utter);
                       }
+                    }
+
+                    function playStoryWithSpeakers() {
+                      paused = false;
+                      wasPaused = false;
                       speakNext();
                     }
 
-                    document.getElementById('playBtn').addEventListener('click', playStoryWithSpeakers);
-                    document.getElementById('pauseBtn').addEventListener('click', function() {
-                      window.pauseAudio();
+                    function pauseStory() {
+                      paused = true;
+                      wasPaused = true;
+                      synth.cancel();
+                    }
+
+                    function stopStory() {
+                      paused = false;
+                      wasPaused = false;
+                      idx = 0;
+                      synth.cancel();
+                    }
+
+                    window.stopAudio = stopStory;
+                    window.pauseAudio = pauseStory;
+
+                    document.getElementById('playBtn').addEventListener('click', function() {
+                      if (wasPaused) {
+                        paused = false;
+                        wasPaused = false;
+                        speakNext();
+                      } else {
+                        stopStory();
+                        idx = 0;
+                        speakNext();
+                      }
                     });
-                    document.getElementById('stopBtn').addEventListener('click', function() {
-                      window.stopAudio();
-                    });
+                    document.getElementById('pauseBtn').addEventListener('click', pauseStory);
+                    document.getElementById('stopBtn').addEventListener('click', stopStory);
                     document.getElementById('closeBtn').addEventListener('click', function() {
-                      window.stopAudio();
+                      stopStory();
                       hideModal();
                     });
                 });
