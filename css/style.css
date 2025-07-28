@@ -1,0 +1,59 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181f2a;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+#mindmap-container {
+    margin: 40px auto;
+    max-width: 900px;
+    min-height: 600px;
+    position: relative;
+}
+.node {
+    background: #232b3a;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    padding: 16px 24px;
+    margin: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.node:hover {
+    background: #2e3a54;
+}
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #232b3a;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    padding: 32px;
+    min-width: 350px;
+    z-index: 1000;
+    display: none;
+}
+#modal.visible {
+    display: block;
+}
+.audio-controls {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+button {
+    background: #2e3a54;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+button:hover {
+    background: #3b4a6b;
+}
