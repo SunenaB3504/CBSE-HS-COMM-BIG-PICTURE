@@ -70,7 +70,8 @@ function showModal(node) {
           'Financial Statements': 'data/financial-statements.json',
           'Cashflow Statement': 'data/cashflow-statement.json',
           'Principles and functions of Management': 'data/principles-functions-management.json',
-          'Business Finance and Marketing': 'data/business-finance-marketing.json'
+          'Business Finance and Marketing': 'data/business-finance-marketing.json',
+          'Macro Economics': 'data/macroeconomics.json'
         };
         const jsonFile = jsonMap[node.label];
         if (jsonFile) {
