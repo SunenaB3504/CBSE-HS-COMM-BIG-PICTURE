@@ -61,9 +61,14 @@ function renderMindmap() {
 
 function showModal(node) {
   const modal = document.getElementById('modal');
-        // If node is 'Short story' or 'Long Story', fetch and show JSON content
-        if (node.label === 'Short story' || node.label === 'Long Story') {
-            const jsonFile = node.label === 'Short story' ? 'data/story-small.json' : 'data/long-story.json';
+        // If node has a corresponding JSON file, fetch and show its content
+        const jsonMap = {
+          'Short story': 'data/story-small.json',
+          'Long Story': 'data/long-story.json',
+          'Partnership': 'data/partnership.json'
+        };
+        const jsonFile = jsonMap[node.label];
+        if (jsonFile) {
             fetch(jsonFile)
                 .then(res => res.json())
                 .then(data => {
@@ -77,7 +82,7 @@ function showModal(node) {
                         data.paragraphs.map((p) =>
                           typeof p === 'string'
                             ? `<p>${p}</p>`
-                            : `<p><strong>${p.speaker}:</strong> ${p.text}</p>`
+                            : `<p><strong>${p.speaker ? p.speaker + ':' : ''}</strong> ${p.text}</p>`
                         ).join('') +
                       `</div>` +
                       `<button id='closeBtn'>Close</button>`;
@@ -158,7 +163,7 @@ function showModal(node) {
                       hideModal();
                     });
                 });
-  } else {
+        } else {
     modal.innerHTML = `<h2>${node.label}</h2>` +
       (node.duration ? `<p><em>${node.duration}</em></p>` : '') +
       `<div class="audio-controls">

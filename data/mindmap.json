@@ -1,0 +1,9 @@
+{
+  "nodes": [
+    {
+      "id": "partnership",
+      "name": "Partnership",
+      "content": "data/partnership.json"
+    }
+  ]
+}
