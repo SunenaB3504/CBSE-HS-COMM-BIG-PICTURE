@@ -1,0 +1,34 @@
+{
+  "title": "Financial Statements",
+  "metadata": {
+    "source": "financial-statements.txt",
+    "type": "story",
+    "length": "long"
+  },
+  "speaker": "Narrator",
+  "paragraphs": [
+    {"speaker": "Narrator", "text": "It was February 2027, weeks before their Class 12 Board exams. Kanishq was wrestling with a dense chapter: Financial Statement Analysis."},
+    {"speaker": "Kanishq", "text": "Honestly, Neil, we’ve learned how to prepare these statements. But now we have to become financial detectives? What's the point of all these ratios and comparisons?"},
+    {"speaker": "Neil", "text": "Think of it this way. We’ve built the engine. Now, with Financial Statement Analysis, we’re the mechanics diagnosing how well that engine is running. We’re looking beyond the surface numbers to see the company’s true health."},
+    {"speaker": "Narrator", "text": "Neil opened his laptop. “Let’s take a fictional rival, ‘Learner's Edge Technologies Limited’. Imagine we’re potential investors.”"},
+    {"speaker": "Narrator", "text": "Phase 1: The Comparative Glance – How is the Engine Growing?"},
+    {"speaker": "Neil", "text": "First, their Comparative Financial Statements. It’s like looking at two pictures of the same person, a year apart. We see direct growth. Look, Revenue from Operations increased by 15%. Good. But Employee Benefit Expenses jumped by 25%! That tells us labor costs are rising faster than sales. Is that sustainable?"},
+    {"speaker": "Kanishq", "text": "So, the comparative statement shows us the trends – where money is coming from and where it’s going, year-on-year, in absolute numbers and percentages."},
+    {"speaker": "System", "text": "Tool 1: Comparative Statements\nCompares financial data across different periods to identify trends and growth patterns in absolute and percentage terms."},
+    {"speaker": "Narrator", "text": "Phase 2: The Proportional Picture – What is the Engine Made Of?"},
+    {"speaker": "Neil", "text": "Next, the Common Size Statements. This strips away company size and shows proportions. For 'Learner's Edge', 60% of its assets are Fixed Assets like servers, and only 10% is Cash. Normal for an EdTech company. For their Profit and Loss, if their software license costs jumped from 30% to 40% of sales, that’s a red flag! Their core costs are eating into profits."},
+    {"speaker": "Kanishq", "text": "So, common size helps us compare 'Learner's Edge' to a massive global platform, even with different numbers? It shows us where inefficiencies might lie."},
+    {"speaker": "System", "text": "Tool 2: Common Size Statements\nExpresses each line item as a percentage of a base figure (e.g., Total Assets or Revenue) to analyze composition and compare against industry peers."},
+    {"speaker": "Narrator", "text": "Phase 3: The Diagnostic Tools – Unpacking the Ratios"},
+    {"speaker": "Neil", "text": "Now, the real detective work – Accounting Ratios. They’re like the specific meters on an engine."},
+    {"speaker": "Neil", "text": "Their Current Ratio is 1.2:1. Good or bad?"},
+    {"speaker": "Kanishq", "text": "Hmm. It means they have ₹1.2 of current assets for every ₹1 of current liabilities. It’s okay, not great. They can meet short-term bills, but they’re not swimming in cash."},
+    {"speaker": "Neil", "text": "Their Debt-to-Equity Ratio is 1.5:1."},
+    {"speaker": "Kanishq", "text": "That means for every ₹1 of their own money, they have borrowed ₹1.5. That’s a bit high! A riskier investment, maybe."},
+    {"speaker": "Neil", "text": "And their Net Profit Ratio is 8%."},
+    {"speaker": "Kanishq", "text": "Okay, for every ₹100 of sales, they make ₹8 as net profit. That's their overall profitability."},
+    {"speaker": "System", "text": "Tool 3: Accounting Ratios\n• Liquidity (e.g., Current Ratio): Ability to meet short-term obligations.\n• Solvency (e.g., Debt-to-Equity): Ability to meet long-term debt.\n• Profitability (e.g., Net Profit Ratio): Overall operational efficiency."},
+    {"speaker": "Narrator", "text": "As the streetlights of Vashi flickered on, Kanishq felt a profound shift. Financial Statement Analysis wasn’t just about formulas; it was about connecting numbers to reality, learning to ask crucial questions, and telling the hidden story of a business’s health."},
+    {"speaker": "Narrator", "text": "Just as a doctor uses various diagnostic tests and scans to understand the intricate workings of a human body, uncovering hidden ailments or confirming robust health, Financial Statement Analysis provides the essential tools to diagnose the true financial pulse of a business, allowing one to understand its strengths, weaknesses, and potential for growth."}
+  ]
+}

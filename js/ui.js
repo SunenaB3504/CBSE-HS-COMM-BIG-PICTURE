@@ -66,7 +66,8 @@ function showModal(node) {
           'Short story': 'data/story-small.json',
           'Long Story': 'data/long-story.json',
           'Partnership': 'data/partnership.json',
-          'Companies': 'data/companies.json'
+          'Companies': 'data/companies.json',
+          'Financial Statements': 'data/financial-statements.json'
         };
         const jsonFile = jsonMap[node.label];
         if (jsonFile) {
