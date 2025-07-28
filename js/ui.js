@@ -65,7 +65,8 @@ function showModal(node) {
         const jsonMap = {
           'Short story': 'data/story-small.json',
           'Long Story': 'data/long-story.json',
-          'Partnership': 'data/partnership.json'
+          'Partnership': 'data/partnership.json',
+          'Companies': 'data/companies.json'
         };
         const jsonFile = jsonMap[node.label];
         if (jsonFile) {

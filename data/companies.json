@@ -1,0 +1,37 @@
+{
+  "title": "Companies",
+  "metadata": {
+    "source": "companies.txt",
+    "type": "story",
+    "length": "long"
+  },
+  "speaker": "Narrator",
+  "paragraphs": [
+    {"speaker": "Narrator", "text": "The sun beat down on the streets of Bandra, but inside a luxury car exhibition, the air was cool and crisp. Surrounded by automotive titans, Neil aimed to teach Kanishq the intricate dance of Company Accounting."},
+    {"speaker": "Neil", "text": "Alright, Kanishq, forget the algorithms for a moment. Each of these beauties represents a crucial concept in our Class 12 Company Accounting syllabus. We’re not leaving until you understand how these corporate giants are built, financially speaking."},
+    {"speaker": "Narrator", "text": "Phase 1: Fueling the Vision – Raising Share Capital"},
+    {"speaker": "Narrator", "text": "They stopped before a futuristic concept car, gleaming under a spotlight."},
+    {"speaker": "Neil", "text": "Look at this, Kanishq. It's a dream, a vision. It’s like a company's Authorized Capital – the maximum number of shares a company is legally permitted to issue. Next to it, the production cars are the Issued Capital – the part of that vision currently offered to the public."},
+    {"speaker": "System", "text": "Key Concepts: Share Capital\n• Authorized Capital: The maximum capital a company can legally raise.\n• Issued Capital: The part of authorized capital offered to the public."},
+    {"speaker": "Narrator", "text": "A group of eager buyers were filling out forms."},
+    {"speaker": "Neil", "text": "See them? They are paying Application Money. When the company formally assigns them shares, that's Allotment. The rest of the price is often paid in installments, called Calls, like a First Call and a Final Call."},
+    {"speaker": "Kanishq", "text": "What if too many people want the same car, Neil? Like for a limited edition?"},
+    {"speaker": "Neil", "text": "Ah, Oversubscription! The company can either reject some applications or use a Pro-rata Allotment. With pro-rata, everyone gets a proportional share, and their excess application money is adjusted towards the allotment. It's about managing high demand."},
+    {"speaker": "System", "text": "Key Share Issue Terms:\n• Application: Initial payment from prospective shareholders.\n• Allotment: Formal assignment of shares.\n• Calls: Subsequent installments on the share price.\n• Oversubscription: More applications received than shares issued."},
+    {"speaker": "Narrator", "text": "Suddenly, their attention was drawn to a tense scene where a frustrated man was being led away from a sleek black car."},
+    {"speaker": "Neil", "text": "That, Kanishq, is the harsh reality of Calls in Arrears and Forfeiture of Shares. He probably couldn't pay his 'Final Call'. When a shareholder fails to pay, their shares can be forfeited, or cancelled. The money they did pay is transferred to a Forfeited Shares Account."},
+    {"speaker": "Neil", "text": "But not all is lost for the company! The forfeited shares can be re-issued, often at a discount. Any profit from this re-issue goes to a special account called Capital Reserve, as it's a capital gain."},
+    {"speaker": "Narrator", "text": "Phase 2: Borrowed Strength – Issuing Debentures"},
+    {"speaker": "Narrator", "text": "They moved towards a section showcasing concept models that were on loan."},
+    {"speaker": "Neil", "text": "Look at these. They are here on loan. This is like Debentures in a company. They are loans from the public, not ownership. We issue them as certificates, promising a fixed interest rate and repayment after a set period."},
+    {"speaker": "Kanishq", "text": "But what if the company doesn't have the money to repay these massive loans when they mature?"},
+    {"speaker": "Neil", "text": "That's where foresight comes in. A responsible company must create a Debenture Redemption Reserve (DRR) out of its profits, and make a Debenture Redemption Investment (DRI) to ensure the money is liquid and ready for repayment."},
+    {"speaker": "System", "text": "Key Concept: Debentures\n• A form of long-term loan to a company.\n• DRR (Reserve) & DRI (Investment) are created to ensure funds are available for repayment."},
+    {"speaker": "Narrator", "text": "Phase 3: The Big Picture – Financial Reporting"},
+    {"speaker": "Narrator", "text": "Finally, they reached a large information booth with detailed financial charts."},
+    {"speaker": "Neil", "text": "This is the grand finale. All the transactions—shares issued, debentures taken, assets bought—culminate in the company's Balance Sheet and the Statement of Profit & Loss. Prepared according to Schedule III of the Companies Act, 2013, they give the full financial picture."},
+    {"speaker": "Kanishq", "text": "So, when we see a massive car company on the news, its entire global operation is built on these very entries? Balancing shares and debentures, and presenting it all in these structured reports?"},
+    {"speaker": "Neil", "text": "Exactly. Company accounting gives us the financial map of these corporate giants."},
+    {"speaker": "Narrator", "text": "As the evening lights twinkled, Kanishq understood. Just as a master mechanic understands every gear inside a luxury car, Company Accounting provides the knowledge to understand every financial component within a corporate entity, allowing one to read its financial story with precision and insight."}
+  ]
+}

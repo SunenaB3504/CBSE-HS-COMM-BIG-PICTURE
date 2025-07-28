@@ -4,6 +4,11 @@
       "id": "partnership",
       "name": "Partnership",
       "content": "data/partnership.json"
+    },
+    {
+      "id": "companies",
+      "name": "Companies",
+      "content": "data/companies.json"
     }
   ]
 }
